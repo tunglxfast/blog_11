@@ -1,0 +1,12 @@
+CREATE TABLE blog_entry (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description_image TEXT,
+    content TEXT,
+    published_date DATE
+);
+
+CREATE TABLE about_me (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content TEXT
+);
