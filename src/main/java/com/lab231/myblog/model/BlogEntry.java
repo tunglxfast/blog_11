@@ -12,8 +12,8 @@ public class BlogEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @Column(name = "description_image")
-    private String descriptionImage;
+    @Column(name = "image_url")
+    private String imageUrl;
     private String content;
     @Column(name = "published_date")
     private LocalDate publishedDate;
@@ -26,8 +26,8 @@ public class BlogEntry {
         return title;
     }
 
-    public String getDescriptionImage() {
-        return descriptionImage;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getContent() {
@@ -46,8 +46,8 @@ public class BlogEntry {
         this.title = title;
     }
 
-    public void setDescriptionImage(String descriptionImage) {
-        this.descriptionImage = descriptionImage;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public void setContent(String content) {

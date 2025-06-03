@@ -1,12 +1,45 @@
+DROP TABLE IF EXISTS blog_entry;
+DROP TABLE IF EXISTS about_me;
+
 CREATE TABLE blog_entry (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    description_image TEXT,
+    id IDENTITY PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    image_url TEXT,
     content TEXT,
     published_date DATE
 );
 
+INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
+  'Essential skills for a happy life!',
+  'img2.jpg',
+  '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+   <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation...</p>
+   <p>Per an labitur lucilius ullamcorper, esse erat ponderum ad vim...</p>',
+  DATE '2015-11-16'
+),
+(
+  'You''ve gotta dance',
+  NULL,
+  '<div class="content">
+     <blockquote class="pull-right">
+       <p><em>“You''ve gotta dance like there''s nobody watching,<br>
+       Love like you''ll never be hurt,<br>
+       Sing like there''s nobody listening,<br>
+       And live like it''s heaven on earth.”</em></p>
+       <small><cite title="William W. Purkey">William W. Purkey</cite></small>
+     </blockquote>
+   </div>',
+  DATE '2015-11-16'
+),
+(
+  'Photo',
+  'img1.jpg',
+  NULL,
+  DATE '2015-11-16'
+);
+
+
 CREATE TABLE about_me (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id IDENTITY PRIMARY KEY,
     content TEXT
 );
