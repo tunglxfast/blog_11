@@ -1,0 +1,41 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog - Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 class="site-title">Welcome to My Life Blog</h1>
+        <p class="site-subtitle">Sharing thoughts, stories, and moments</p>
+    </header>
+
+    <main>
+        <section class="top-entries">
+            <h2>Latest Posts</h2>
+            <div class="row">
+                <div class="col-md-4" th:each="entry : ${entries}">
+                    <div class="blog-post">
+                        <img th:src="@{/images/{img}(img=${entry.descriptionImage})}" class="img-fluid" />
+                        <h3 class="title" th:text="${entry.title}"></h3>
+                        <p class="content-preview" th:text="${#strings.abbreviate(entry.content, 150)}"></p>
+                        <p class="published-date" th:text="${#temporals.format(entry.publishedDate, 'MMMM dd, yyyy')}"></p>
+                        <a class="read-more" th:href="@{'/entry/' + ${entry.id}}">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <a th:href="@{/overview}">View All Posts</a> |
+            <a th:href="@{/about}">About Me</a>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>
