@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS blog_entry;
 DROP TABLE IF EXISTS about_me;
+DROP TABLE IF EXISTS page_view;
 
 CREATE TABLE blog_entry (
     id IDENTITY PRIMARY KEY,
@@ -20,15 +21,13 @@ INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
 (
   'You''ve gotta dance',
   NULL,
-  '<div class="content">
-     <blockquote class="pull-right">
-       <p><em>“You''ve gotta dance like there''s nobody watching,<br>
-       Love like you''ll never be hurt,<br>
-       Sing like there''s nobody listening,<br>
-       And live like it''s heaven on earth.”</em></p>
-       <small><cite title="William W. Purkey">William W. Purkey</cite></small>
-     </blockquote>
-   </div>',
+  '<blockquote class="pull-right">
+     <p><em>“You''ve gotta dance like there''s nobody watching,<br>
+     Love like you''ll never be hurt,<br>
+     Sing like there''s nobody listening,<br>
+     And live like it''s heaven on earth.”</em></p>
+     <small><cite title="William W. Purkey">William W. Purkey</cite></small>
+   </blockquote>',
   DATE '2015-11-16'
 ),
 (
@@ -38,8 +37,27 @@ INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
   DATE '2015-11-16'
 );
 
+/* ------------------------------------------------------------ */
 
 CREATE TABLE about_me (
     id IDENTITY PRIMARY KEY,
-    content TEXT
+    content TEXT,
+    author VARCHAR(255)
 );
+
+INSERT INTO about_me (content, author)
+VALUES (
+    '<p>Lorem ipsum dolor sit amet</p>',
+    'Vivianne Russell'
+);
+
+/* ------------------------------------------------------------ */
+
+CREATE TABLE page_view (
+    page VARCHAR(255) PRIMARY KEY,
+    count BIGINT
+);
+
+INSERT INTO Page_View (page, count) VALUES
+('blog', 0),
+('about', 0);

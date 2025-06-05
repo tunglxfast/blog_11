@@ -1,12 +1,11 @@
 package com.lab231.myblog.model;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Entity
-@NoArgsConstructor
+@Table(name = "blog_entry")
 public class BlogEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +16,16 @@ public class BlogEntry {
     private String content;
     @Column(name = "published_date")
     private LocalDate publishedDate;
+
+    public BlogEntry() {
+    }
+
+    public BlogEntry(String title, String imageUrl, String content, LocalDate publishedDate) {
+        this.title = title;
+        this.imageUrl = imageUrl;
+        this.content = content;
+        this.publishedDate = publishedDate;
+    }
 
     public Long getId() {
         return id;

@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <title>About Me Page</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
+<div class="container-fluid site-wrapper">
+    <!-- Header -->
+    <div class="container-fluid header-wrapper" id="header">
+        <div class="container">
+            <div class="title-wrapper">
+                <div class="title-wrapper-inner">
+                    <div class="title">Blogging About My Life</div>
+                    <div class="subtitle">Welcome to my blog</div>
+                </div>
+            </div>
+            <div class="navbar navbar-compact">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <div class="nav-collapse collapse">
+                            <ul class="nav" id="topMenu" data-submenu="horizontal">
+                                <li><a href="/">My Blog</a></li>
+                                <li class="active"><a href="/about">About Me</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="container-fluid content-wrapper" id="content">
+        <div class="container">
+            <div class="row-fluid content-inner">
+                <div id="left" class="span9">
+                    <div class="wrapper blog">
+                        <div class="heading">
+                            <h1 class="page-title">About Me</h1>
+                        </div>
+
+                        <div class="content">
+                            <p th:utext="${about.content}">[About Me Content Here]</p>
+
+                            <div class="signature">
+                                <p>Kind regards</p>
+                                <div class="signature-sign" style="font-family: 'Pacifico', cursive;" th:text="${about.author}">Vivianne Russell</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="right" class="span3">
+                    <div class="sidebar">
+                        <div class="wrapper share-box">
+                            <div class="heading">
+                                <h4>Share this page</h4>
+                            </div>
+                            <div class="content">
+                                <ul>
+                                    <li><a href="#"><i class="icon-facebook-sign"></i><span>Share on Facebook</span></a></li>
+                                    <li><a href="#"><i class="icon-twitter-sign"></i><span>Share on Twitter</span></a></li>
+                                    <li><a href="#"><i class="icon-google-plus-sign"></i><span>Share on Google+</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="wrapper viral-box">
+                            <div class="heading">
+                                <h4>Create a website</h4>
+                            </div>
+                            <div class="content">
+                                <p>Everybody can create a website, it's easy.</p>
+                                <div class="bottom">
+                                    <a href="http://www.simplesite.com/" class="btn btn-block">Try it for FREE now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer-wrapper">
+        <div class="footer-info">
+            <div class="footer-info-text">
+                This website was created with SimpleSite
+            </div>
+            <div class="footer-powered-by">
+                <a href="http://www.simplesite.com/">Get Your own FREE website. Click here!</a>
+            </div>
+        </div>
+        <div class="footer-page-counter">
+            <span class="footer-page-counter-item"
+                  th:each="digit : ${viewCountDigits}"
+                  th:text="${digit}">0</span>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

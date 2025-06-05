@@ -15,7 +15,7 @@ public class BlogController {
     @Autowired
     private BlogEntryRepository blogEntryRepository;
 
-    @GetMapping("/")
+    @GetMapping(value = {"/", "index", "/home"})
     public String home(Model model) {
         List<BlogEntry> top3 = blogEntryRepository.findTop3ByOrderByPublishedDateDesc();
         model.addAttribute("entries", top3);
@@ -37,10 +37,5 @@ public class BlogController {
         } else {
             return "error";
         }
-    }
-
-    @GetMapping("/about")
-    public String about() {
-        return "about";
     }
 }
