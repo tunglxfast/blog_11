@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>About Me Page</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="container-fluid site-wrapper">
+
     <!-- Header -->
     <div class="container-fluid header-wrapper" id="header">
         <div class="container">
@@ -30,27 +32,33 @@
             </div>
         </div>
     </div>
+
     <!-- Content -->
     <div class="container-fluid content-wrapper" id="content">
         <div class="container">
             <div class="row-fluid content-inner">
                 <div id="left" class="span9">
-                    <div class="wrapper blog">
-                        <div class="heading">
-                            <h1 class="page-title">About Me</h1>
-                        </div>
-
-                        <div class="content">
-                            <p th:utext="${about.content}">[About Me Content Here]</p>
-
-                            <div class="signature">
-                                <p>Kind regards</p>
-                                <div class="signature-sign" style="font-family: 'Pacifico', cursive;" th:text="${about.author}">Vivianne Russell</div>
+                    <div class="wrapper">
+                        <div class="section article">
+                            <div class="heading">
+                                <h3>About Me</h3>
+                            </div>
+                            <div class="content">
+                                <p th:utext="${about.content}">[About Me Content Here]</p>
                             </div>
                         </div>
-
+                        <div class="section signature">
+                            <div class="content">
+                                <div class="signature-text-noimg">
+                                    <p>Kind regards</p>
+                                    <div class="signature-sign" style="font-family: 'Pacifico', serif;" th:text="${about.author}">Vivianne Russell</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Sidebar -->
                 <div id="right" class="span3">
                     <div class="sidebar">
                         <div class="wrapper share-box">
@@ -81,23 +89,16 @@
             </div>
         </div>
     </div>
+
     <!-- Footer -->
-    <div class="footer-wrapper">
-        <div class="footer-info">
-            <div class="footer-info-text">
-                This website was created with SimpleSite
+    <div class="container-fluid footer-wrapper" id="footer">
+        <div class="container">
+            <div class="footer-page-counter" style="display: block;">
+                <span class="footer-page-counter-item" th:each="digit : ${viewCountDigits}" th:text="${digit}">0</span>
             </div>
-            <div class="footer-powered-by">
-                <a href="http://www.simplesite.com/">Get Your own FREE website. Click here!</a>
-            </div>
-        </div>
-        <div class="footer-page-counter">
-            <span class="footer-page-counter-item"
-                  th:each="digit : ${viewCountDigits}"
-                  th:text="${digit}">0</span>
         </div>
     </div>
-</div>
 
+</div>
 </body>
 </html>

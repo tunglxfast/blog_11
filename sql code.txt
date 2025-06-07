@@ -10,6 +10,19 @@ CREATE TABLE blog_entry (
     published_date DATE
 );
 
+CREATE TABLE page_view (
+    page VARCHAR(255) PRIMARY KEY,
+    count BIGINT
+);
+
+CREATE TABLE about_me (
+    id IDENTITY PRIMARY KEY,
+    content TEXT,
+    author VARCHAR(255)
+);
+
+/* ------------------------Insert blog_entry data------------------------------------ */
+
 INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
   'Essential skills for a happy life!',
   'img2.jpg',
@@ -37,27 +50,19 @@ INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
   DATE '2015-11-16'
 );
 
-/* ------------------------------------------------------------ */
 
-CREATE TABLE about_me (
-    id IDENTITY PRIMARY KEY,
-    content TEXT,
-    author VARCHAR(255)
-);
+/* ------------------------Insert page_view/about_me data------------------------------------ */
+
+INSERT INTO page_view (page, count) VALUES
+('blog', 0),
+('about', 0);
 
 INSERT INTO about_me (content, author)
 VALUES (
-    '<p>Lorem ipsum dolor sit amet</p>',
+    '<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+      ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue
+      duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </span></p> <p><span>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum
+      claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit
+      litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</span>',
     'Vivianne Russell'
 );
-
-/* ------------------------------------------------------------ */
-
-CREATE TABLE page_view (
-    page VARCHAR(255) PRIMARY KEY,
-    count BIGINT
-);
-
-INSERT INTO Page_View (page, count) VALUES
-('blog', 0),
-('about', 0);

@@ -107,13 +107,8 @@
     <!-- Footer -->
     <div class="container-fluid footer-wrapper" id="footer">
         <div class="container">
-            <div class="footer-info">
-                <div class="footer-info-text">
-                    This website was created with SimpleSite
-                </div>
-                <div class="footer-powered-by">
-                    <a href="http://www.simplesite.com/">Get Your own FREE website. Click here!</a>
-                </div>
+            <div class="footer-page-counter" style="display: block;">
+                <span class="footer-page-counter-item" th:each="digit : ${viewCountDigits}" th:text="${digit}">0</span>
             </div>
         </div>
     </div>
