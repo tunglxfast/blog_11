@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="footer">
+    <!-- Footer -->
+    <div class="container-fluid footer-wrapper" id="footer">
+        <div class="container">
+            <div class="footer-page-counter" style="display: block;">
+                <span class="footer-page-counter-item" th:each="digit : ${viewCountDigits}" th:text="${digit}">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html> 

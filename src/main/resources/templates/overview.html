@@ -2,22 +2,57 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Overview Page</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Blog Overview</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
-<div class="title-wrapper">
-    <div class="title-wrapper-inner">
-        <a rel="nofollow" class="logo " href="http://us-123my-life.simplesite.com/">
+<div class="container-fluid site-wrapper">
+    <!-- Header -->
+    <div th:replace="fragments/header :: header('blog')"></div>
 
-        </a>
-        <div class="title ">
-            Blogging About My Life
-        </div>
-        <div class="subtitle">
-            Welcome to my blog
+    <!-- Content -->
+    <div class="container-fluid content-wrapper" id="content">
+        <div class="container">
+            <div class="row-fluid content-inner">
+                <div id="left" class="span9">
+                    <div class="wrapper blog">
+                        <div class="heading">
+                            <h1 class="page-title">Blog Overview</h1>
+                        </div>
+
+                        <div class="content">
+                            <div th:each="group, stat : ${groupedEntries}">
+                                <div class="border-top-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                                    <span th:text="${group.key}"></span>
+                                    <span style="font-weight: normal;">Date</span>
+                                </div>
+                                <table style="width:100%; border:none; border-collapse:collapse;">
+                                    <tbody>
+                                    <tr th:each="entry, entryStat : ${group.value}">
+                                        <td class="border-top-row" style="width:80%;">
+                                            <a th:href="@{'/entry/' + ${entry.id}}" th:text="${entry.title}"></a>
+                                        </td>
+                                        <td class="border-top-row" style="width:20%; text-align:right;">
+                                            <span th:text="${#temporals.format(entry.publishedDate, 'dd-MM-yyyy')}"></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div id="right" class="span3">
+                    <div th:replace="fragments/sidebar :: sidebar"></div>
+                </div>
+            </div>
         </div>
     </div>
-</div> <!-- these are the titles -->
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
 </body>
 </html>

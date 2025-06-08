@@ -55,7 +55,9 @@ INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
 
 INSERT INTO page_view (page, count) VALUES
 ('blog', 0),
-('about', 0);
+('about', 0),
+('detail', 0),
+('overview', 0);
 
 INSERT INTO about_me (content, author)
 VALUES (

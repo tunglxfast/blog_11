@@ -1,6 +1,5 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>My Blog - Home</title>
@@ -9,30 +8,13 @@
 <body>
 <div class="container-fluid site-wrapper">
     <!-- Header -->
-    <div class="container-fluid header-wrapper" id="header">
-        <div class="container">
-            <div class="title-wrapper">
-                <div class="title-wrapper-inner">
-                    <div class="title">Blogging About My Life</div>
-                    <div class="subtitle">Welcome to my blog</div>
-                </div>
-            </div>
-            <div class="navbar navbar-compact">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <div class="nav-collapse collapse">
-                            <ul class="nav" id="topMenu" data-submenu="horizontal">
-                                <li class="active"><a href="/">My Blog</a></li>
-                                <li><a href="/about">About Me</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div th:replace="fragments/header :: header('blog')"></div>
+    
     <!-- Content -->
     <div class="container-fluid content-wrapper" id="content">
+        <div th:if="${error != null}" class="alert alert-danger">
+            <p th:text="${error}">Error</p>
+        </div>
         <div class="container">
             <div class="row-fluid content-inner">
                 <div id="left" class="span9">
@@ -71,47 +53,17 @@
                                 <li><a href="/overview">Overview</a></li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
                 <div id="right" class="span3">
-                    <div class="sidebar">
-                        <div class="wrapper share-box">
-                            <div class="heading">
-                                <h4>Share this page</h4>
-                            </div>
-                            <div class="content">
-                                <ul>
-                                    <li><a href="#"><i class="icon-facebook-sign"></i><span>Share on Facebook</span></a></li>
-                                    <li><a href="#"><i class="icon-twitter-sign"></i><span>Share on Twitter</span></a></li>
-                                    <li><a href="#"><i class="icon-google-plus-sign"></i><span>Share on Google+</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wrapper viral-box">
-                            <div class="heading">
-                                <h4>Create a website</h4>
-                            </div>
-                            <div class="content">
-                                <p>Everybody can create a website, it's easy.</p>
-                                <div class="bottom">
-                                    <a href="http://www.simplesite.com/" class="btn btn-block">Try it for FREE now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div th:replace="fragments/sidebar :: sidebar"></div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- Footer -->
-    <div class="container-fluid footer-wrapper" id="footer">
-        <div class="container">
-            <div class="footer-page-counter" style="display: block;">
-                <span class="footer-page-counter-item" th:each="digit : ${viewCountDigits}" th:text="${digit}">0</span>
-            </div>
-        </div>
-    </div>
+    <div th:replace="fragments/footer :: footer"></div>
 </div>
 </body>
 </html>

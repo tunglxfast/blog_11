@@ -12402,3 +12402,9 @@ body .guest-book .item>.controls span {
 }
 
 /* LESS Output End */
+/* Add new for overview page */
+.border-top-row {
+    border: none;
+    border-top: 1px solid #eee;
+    padding: 6px 0;
+}

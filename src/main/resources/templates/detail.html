@@ -2,9 +2,54 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Blog Detail</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
+<div class="container-fluid site-wrapper">
+    <!-- Header -->
+    <div th:replace="fragments/header :: header('blog')"></div>
 
+    <!-- Content -->
+    <div class="container-fluid content-wrapper" id="content">
+        <div class="container">
+            <div class="row-fluid content-inner">
+                <div id="left" class="span9">
+                    <div class="wrapper blog">
+                        <div class="heading">
+                            <h1 class="page-title">Blog Detail</h1>
+                        </div>
+
+                        <div class="content">
+                            <!-- TODO: Add blog detail content here -->
+                            <!-- Example structure:
+                            <div class="section">
+                                <div class="content">
+                                    <div class="item">
+                                        <div class="heading">
+                                            <h4 th:text="${entry.title}">Title</h4>
+                                        </div>
+                                        <div class="content">
+                                            <div th:utext="${entry.content}">Content</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div id="right" class="span3">
+                    <div th:replace="fragments/sidebar :: sidebar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
 </body>
 </html>
