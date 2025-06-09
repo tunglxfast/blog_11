@@ -21,21 +21,32 @@
                         </div>
 
                         <div class="content">
-                            <!-- TODO: Add blog detail content here -->
-                            <!-- Example structure:
                             <div class="section">
                                 <div class="content">
+                                    <div class="avatar">
+                                        <i class="fa-solid fa-pencil icon-4x"></i>
+                                    </div>
                                     <div class="item">
+                                        <div class="controls">
+                                            <span class="date-text" th:text="${#temporals.format(entry.publishedDate, 'dd-MM-yyyy')}"></span>
+                                        </div>
                                         <div class="heading">
-                                            <h4 th:text="${entry.title}">Title</h4>
+                                            <h2 th:text="${entry.title}"></h2>
                                         </div>
                                         <div class="content">
-                                            <div th:utext="${entry.content}">Content</div>
+                                            <div class="img-simple span6 pull-left" th:if="${entry.imageUrl != null}">
+                                                <div class="image">
+                                                    <img th:src="@{/images/{img}(img=${entry.imageUrl})}" />
+                                                </div>
+                                            </div>
+                                            <div th:utext="${entry.content}"></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            -->
+                            </div>                            
+                            <ul class="pager">
+                                <li><a href="/overview">Overview</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

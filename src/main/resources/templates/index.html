@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>My Blog - Home</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <div class="container-fluid site-wrapper">
@@ -27,7 +28,7 @@
                             <div class="section" th:each="entry : ${entries}">
                                 <div class="content">
                                     <div class="avatar">
-                                        <i class="icon-pencil icon-4x"></i>
+                                        <i class="fa-solid fa-pencil icon-4x"></i>
                                     </div>
                                     <div class="item">
                                         <div class="controls">

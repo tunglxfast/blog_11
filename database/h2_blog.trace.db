@@ -824,3 +824,21 @@ INSERT INTO "PUBLIC"."ABOUT_ME_COPY_3_0"("ID", "CONTENT", "AUTHOR") OVERRIDING S
 2025-06-09 01:02:59.380744+07:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "U&'<blockquote class=""pull-right"">\\000d\\000a     <p><em>\\201cYou''ve gotta dance... (334)"; SQL statement:
 INSERT INTO "PUBLIC"."BLOG_ENTRY_COPY_3_1"("ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE") OVERRIDING SYSTEM VALUE SELECT "ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE" FROM "PUBLIC"."BLOG_ENTRY" [22001-232]
+2025-06-09 21:44:17.011172+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "U&'<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonu... (1224)"; SQL statement:
+INSERT INTO "PUBLIC"."ABOUT_ME_COPY_3_0"("ID", "CONTENT", "AUTHOR") OVERRIDING SYSTEM VALUE SELECT "ID", "CONTENT", "AUTHOR" FROM "PUBLIC"."ABOUT_ME" [22001-232]
+2025-06-09 21:44:17.085969+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "U&'<blockquote class=""pull-right"">\\000d\\000a     <p><em>\\201cYou''ve gotta dance... (334)"; SQL statement:
+INSERT INTO "PUBLIC"."BLOG_ENTRY_COPY_3_1"("ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE") OVERRIDING SYSTEM VALUE SELECT "ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE" FROM "PUBLIC"."BLOG_ENTRY" [22001-232]
+2025-06-09 22:15:17.534107+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "U&'<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonu... (1224)"; SQL statement:
+INSERT INTO "PUBLIC"."ABOUT_ME_COPY_3_0"("ID", "CONTENT", "AUTHOR") OVERRIDING SYSTEM VALUE SELECT "ID", "CONTENT", "AUTHOR" FROM "PUBLIC"."ABOUT_ME" [22001-232]
+2025-06-09 22:15:17.569512+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "U&'<blockquote class=""pull-right"">\\000d\\000a     <p><em>\\201cYou''ve gotta dance... (334)"; SQL statement:
+INSERT INTO "PUBLIC"."BLOG_ENTRY_COPY_3_1"("ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE") OVERRIDING SYSTEM VALUE SELECT "ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE" FROM "PUBLIC"."BLOG_ENTRY" [22001-232]
+2025-06-09 22:32:45.540642+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "U&'<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonu... (1224)"; SQL statement:
+INSERT INTO "PUBLIC"."ABOUT_ME_COPY_3_0"("ID", "CONTENT", "AUTHOR") OVERRIDING SYSTEM VALUE SELECT "ID", "CONTENT", "AUTHOR" FROM "PUBLIC"."ABOUT_ME" [22001-232]
+2025-06-09 22:32:45.577554+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "U&'<blockquote class=""pull-right"">\\000d\\000a     <p><em>\\201cYou''ve gotta dance... (334)"; SQL statement:
+INSERT INTO "PUBLIC"."BLOG_ENTRY_COPY_3_1"("ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE") OVERRIDING SYSTEM VALUE SELECT "ID", "TITLE", "IMAGE_URL", "CONTENT", "PUBLISHED_DATE" FROM "PUBLIC"."BLOG_ENTRY" [22001-232]

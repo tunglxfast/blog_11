@@ -10,11 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.time.format.TextStyle;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
-import java.util.LinkedHashMap;
 
 @Controller
 public class BlogController {
@@ -47,9 +44,15 @@ public class BlogController {
     public String detail(@PathVariable Long id, Model model) {
         BlogEntry blogEntry = blogEntryService.getBlogEntryById(id);
         if (blogEntry != null) {
+            long viewCount = pageViewService.increaseView(PageName.DETAIL.name);
+            List<Character> viewCountDigits = pageViewService.getPaddedViewCountDigits(viewCount);
+            model.addAttribute("viewCountDigits", viewCountDigits);
             model.addAttribute("entry", blogEntry);
             return "detail";
         } else {
+            long viewCount = pageViewService.increaseView(PageName.BLOG.name);
+            List<Character> viewCountDigits = pageViewService.getPaddedViewCountDigits(viewCount);
+            model.addAttribute("viewCountDigits", viewCountDigits);
             model.addAttribute("error", "Blog entry not found");
             return "index";
         }
