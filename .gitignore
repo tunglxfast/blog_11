@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### H2 Database ###
+database/*
+
 ### STS ###
 .apt_generated
 .classpath
@@ -31,3 +34,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### MacOS ###
+.DS_Store
+
+### Windows ###
+Thumbs.db
