@@ -35,7 +35,9 @@
                                             <h3 th:text="${entry.title}"></h3>
                                         </div>
                                         <div class="content">
-                                            <div class="img-simple span6" style="margin-right: 1rem;" th:if="${entry.imageUrl != null}">
+                                            <div class="img-simple" 
+                                            th:classappend="${entry.content != null} ? 'span6 pull-left' : ''" 
+                                            th:if="${entry.imageUrl != null}">
                                                 <div class="image">
                                                     <img th:src="@{/images/{img}(img=${entry.imageUrl})}" />
                                                 </div>

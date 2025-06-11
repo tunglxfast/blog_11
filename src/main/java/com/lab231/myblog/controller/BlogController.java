@@ -33,7 +33,7 @@ public class BlogController {
     @GetMapping("/overview")
     public String overview(Model model) {
         Map<String, List<BlogEntry>> grouped = blogEntryService.getEntriesGroupedByMonthYear();
-        long viewCount = pageViewService.increaseView(PageName.OVERVIEW.name);
+        long viewCount = pageViewService.increaseView(PageName.BLOG.name);
         List<Character> viewCountDigits = pageViewService.getPaddedViewCountDigits(viewCount);
         model.addAttribute("groupedEntries", grouped);
         model.addAttribute("viewCountDigits", viewCountDigits);
@@ -44,7 +44,7 @@ public class BlogController {
     public String detail(@PathVariable Long id, Model model) {
         BlogEntry blogEntry = blogEntryService.getBlogEntryById(id);
         if (blogEntry != null) {
-            long viewCount = pageViewService.increaseView(PageName.DETAIL.name);
+            long viewCount = pageViewService.increaseView(PageName.BLOG.name);
             List<Character> viewCountDigits = pageViewService.getPaddedViewCountDigits(viewCount);
             model.addAttribute("viewCountDigits", viewCountDigits);
             model.addAttribute("entry", blogEntry);

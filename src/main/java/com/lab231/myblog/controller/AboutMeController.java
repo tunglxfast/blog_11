@@ -24,7 +24,7 @@ public class AboutMeController {
         if (abouts.isEmpty()) {
             return "/home";
         } else {
-            long viewCount = pageViewService.increaseView(PageName.ABOUT.name);
+            long viewCount = pageViewService.getViewCount(PageName.BLOG.name);
             List<Character> viewCountDigits = pageViewService.getPaddedViewCountDigits(viewCount);
             model.addAttribute("about", abouts.get(0));
             model.addAttribute("viewCountDigits", viewCountDigits);

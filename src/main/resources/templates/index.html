@@ -38,7 +38,9 @@
                                             <h4><a th:href="@{'/entry/' + ${entry.id}}" th:text="${entry.title}"></a></h4>
                                         </div>
                                         <div class="content">
-                                            <div class="img-simple span6 pull-left" th:if="${entry.imageUrl != null}">
+                                            <div class="img-simple" 
+                                            th:classappend="${entry.content != null} ? 'span6 pull-left' : ''" 
+                                            th:if="${entry.imageUrl != null}">
                                                 <div class="image">
                                                     <a th:href="@{/images/{img}(img=${entry.imageUrl})}">
                                                         <img th:src="@{/images/{img}(img=${entry.imageUrl})}" />
