@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS page_view;
 
 CREATE TABLE blog_entry (
     id IDENTITY PRIMARY KEY,
+    icon VARCHAR(50) NOT NULL,
     title VARCHAR(255) NOT NULL,
     image_url TEXT,
     content TEXT,
@@ -23,7 +24,8 @@ CREATE TABLE about_me (
 
 /* ------------------------Insert blog_entry data------------------------------------ */
 
-INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
+INSERT INTO blog_entry (icon, title, image_url, content, published_date) VALUES (
+  'fa-solid fa-pencil',
   'Essential skills for a happy life!',
   'img2.jpg',
   '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -32,6 +34,7 @@ INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
   DATE '2015-11-16'
 ),
 (
+  'fa-solid fa-quote-left',
   'You''ve gotta dance',
   NULL,
   '<blockquote class="pull-right">
@@ -44,6 +47,7 @@ INSERT INTO blog_entry (title, image_url, content, published_date) VALUES (
   DATE '2015-11-16'
 ),
 (
+  'fa-solid fa-camera-retro',
   'Photo',
   'img1.jpg',
   NULL,

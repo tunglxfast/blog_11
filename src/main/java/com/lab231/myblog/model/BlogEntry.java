@@ -10,6 +10,7 @@ public class BlogEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String icon;
     private String title;
     @Column(name = "image_url")
     private String imageUrl;
@@ -20,7 +21,13 @@ public class BlogEntry {
     public BlogEntry() {
     }
 
-    public BlogEntry(String title, String imageUrl, String content, LocalDate publishedDate) {
+    public BlogEntry(String icon, String title, String imageUrl, String content, LocalDate publishedDate) {
+        this(null, icon, title, imageUrl, content, publishedDate);
+    }
+
+    public BlogEntry(Long id, String icon, String title, String imageUrl, String content, LocalDate publishedDate) {
+        this.id = id;
+        this.icon = icon;
         this.title = title;
         this.imageUrl = imageUrl;
         this.content = content;
@@ -65,5 +72,13 @@ public class BlogEntry {
 
     public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

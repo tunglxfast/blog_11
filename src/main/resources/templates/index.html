@@ -28,7 +28,7 @@
                             <div class="section" th:each="entry : ${entries}">
                                 <div class="content">
                                     <div class="avatar">
-                                        <i class="fa-solid fa-pencil icon-4x"></i>
+                                        <i class="icon-4x" th:classappend="${entry.icon}"></i>
                                     </div>
                                     <div class="item">
                                         <div class="controls">

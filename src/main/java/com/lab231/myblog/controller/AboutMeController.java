@@ -1,7 +1,7 @@
 package com.lab231.myblog.controller;
 
 import com.lab231.myblog.model.AboutMe;
-import com.lab231.myblog.model.PageName;
+import com.lab231.myblog.enums.PageName;
 import com.lab231.myblog.repository.AboutMeRepository;
 import com.lab231.myblog.service.PageViewService;
 import org.springframework.beans.factory.annotation.Autowired;

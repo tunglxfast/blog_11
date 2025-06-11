@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Blog Detail</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <div class="container-fluid site-wrapper">
@@ -24,17 +25,17 @@
                             <div class="section">
                                 <div class="content">
                                     <div class="avatar">
-                                        <i class="fa-solid fa-pencil icon-4x"></i>
+                                        <i class="icon-4x" th:classappend="${entry.icon}"></i>
                                     </div>
                                     <div class="item">
                                         <div class="controls">
                                             <span class="date-text" th:text="${#temporals.format(entry.publishedDate, 'dd-MM-yyyy')}"></span>
                                         </div>
                                         <div class="heading">
-                                            <h2 th:text="${entry.title}"></h2>
+                                            <h3 th:text="${entry.title}"></h3>
                                         </div>
                                         <div class="content">
-                                            <div class="img-simple span6 pull-left" th:if="${entry.imageUrl != null}">
+                                            <div class="img-simple span6" style="margin-right: 1rem;" th:if="${entry.imageUrl != null}">
                                                 <div class="image">
                                                     <img th:src="@{/images/{img}(img=${entry.imageUrl})}" />
                                                 </div>

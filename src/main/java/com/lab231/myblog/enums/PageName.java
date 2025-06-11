@@ -1,4 +1,4 @@
-package com.lab231.myblog.model;
+package com.lab231.myblog.enums;
 
 public enum PageName {
     BLOG("blog"),
