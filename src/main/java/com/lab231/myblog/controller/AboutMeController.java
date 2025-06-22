@@ -3,6 +3,7 @@ package com.lab231.myblog.controller;
 import com.lab231.myblog.model.AboutMe;
 import com.lab231.myblog.enums.PageName;
 import com.lab231.myblog.repository.AboutMeRepository;
+import com.lab231.myblog.service.AdvertisementService;
 import com.lab231.myblog.service.PageViewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,8 @@ public class AboutMeController {
     private AboutMeRepository aboutMeRepository;
     @Autowired
     private PageViewService pageViewService;
+    @Autowired
+    private AdvertisementService advertisementService;
 
     @GetMapping("/about")
     public String aboutPage(Model model) {
@@ -28,6 +31,7 @@ public class AboutMeController {
             List<Character> viewCountDigits = pageViewService.getPaddedViewCountDigits(viewCount);
             model.addAttribute("about", abouts.get(0));
             model.addAttribute("viewCountDigits", viewCountDigits);
+            model.addAttribute("advertisement", advertisementService.getFirstAdvertisement());
             return "about";
         }
     }

@@ -16,11 +16,17 @@
             </div>
         </div>
         <div class="wrapper viral-box">
-            <div class="heading">
-                <h4>Advertise here!</h4>
+            <div class="heading" th:if="${advertisement != null}">
+                <h4 th:if="${advertisement.title != null}" th:text="${advertisement.title}"></h4>
             </div>
-            <div class="content">
-                <p>Interested in advertising? Call 12345 now!</p>
+            <div class="content" th:if="${advertisement != null}">
+                <p th:if="${advertisement.content != null}" th:text="${advertisement.content}"></p>
+                <div class="bottom">
+                    <a th:if="${advertisement.link != null and advertisement.link != null}"
+                       th:href="${advertisement.link}" class="btn btn-block" th:text="${advertisement.buttonText}"></a>
+                    <a th:if="${advertisement.link != null and advertisement.link == null}"
+                       th:href="${advertisement.link}">Link</a>
+                </div>
             </div>
         </div>
     </div>

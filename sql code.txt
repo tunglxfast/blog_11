@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS blog_entry;
 DROP TABLE IF EXISTS about_me;
 DROP TABLE IF EXISTS page_view;
+DROP TABLE IF EXISTS advertisement;
 
 CREATE TABLE blog_entry (
     id IDENTITY PRIMARY KEY,
@@ -20,6 +21,14 @@ CREATE TABLE about_me (
     id IDENTITY PRIMARY KEY,
     content TEXT,
     author VARCHAR(255)
+);
+
+CREATE TABLE advertisement (
+    id IDENTITY PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    button_text VARCHAR(255),
+    link VARCHAR(255)
 );
 
 /* ------------------------Insert blog_entry data------------------------------------ */
@@ -55,7 +64,7 @@ INSERT INTO blog_entry (icon, title, image_url, content, published_date) VALUES 
 );
 
 
-/* ------------------------Insert page_view/about_me data------------------------------------ */
+/* ------------------------Insert others data------------------------------------ */
 
 INSERT INTO page_view (page, count) VALUES
 ('blog', 0),
@@ -72,3 +81,10 @@ VALUES (
       litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</span>',
     'Vivianne Russell'
 );
+
+/*
+INSERT INTO advertisement (title, content, button_text, link) VALUES
+('Create a website', 'Everybody can create a website, it''s easy.', 'Try it for FREE now', '#');
+ */
+ INSERT INTO advertisement (title, content, button_text, link) VALUES
+ ('', '', null, null);
